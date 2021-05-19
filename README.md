@@ -17,11 +17,12 @@ Projeto está salvando no mongoDb no perfil de teste na porta 27017.
 
 Requisições funcionando:
 
-http://localhost:8080/usuario/salvar
-http://localhost:8080/usuario/{cep}
+http://localhost:8080/usuario/salvar  
+http://localhost:8080/usuario/{cep}  
 http://localhost:8080/get/{cep}
 
-Salva um usuário enviando um payload de entrada no seguinte formato:
+Salva um usuário enviando um payload de entrada no seguinte formato:  
+
 {
     "nomeUsuario": "Zildo",
     "dataDeNascimento": "16-07-1996",
@@ -29,7 +30,7 @@ Salva um usuário enviando um payload de entrada no seguinte formato:
     "documento": "105.210.839-31"
 }
 
-Salva no banco:
+Salva no banco:  
 
 {
     "id": "60a523a5c04e4f5f51f1064c",
