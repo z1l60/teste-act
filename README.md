@@ -4,7 +4,7 @@ Pré-requisitos: Java 11
 
 ```bash
 # clonar repositório
-git clone https://github.com/z1l60/projeto-sds3
+git clone https://github.com/z1l60/teste-act.git
 
 # entrar na pasta do projeto back end
 cd backend
