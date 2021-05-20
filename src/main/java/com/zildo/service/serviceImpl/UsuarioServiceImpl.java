@@ -11,6 +11,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -28,16 +29,16 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario salvarUsuario(UsuarioEntradaDTO usuario) {
-        Usuario resposta = new Usuario();
-        resposta.setNomeUsuario(usuario.getNomeUsuario());
-        resposta.setDataDeNascimento(usuario.getDataDeNascimento());
-        resposta.setDocumento(usuario.getDocumento());
-        ResponseEntity<EnderecoDTO> req = (viaCepController.buscarEndereco(usuario.getCep()));
-        EnderecoDTO endereco = req.getBody();
-        resposta.setBairro(endereco.getBairro());
-        resposta.setCidade(endereco.getLocalidade());
-        resposta.setEstado(endereco.getUf());
-        return resposta;
+            Usuario resposta = new Usuario();
+            resposta.setNomeUsuario(usuario.getNomeUsuario());
+            resposta.setDataDeNascimento(usuario.getDataDeNascimento());
+            resposta.setDocumento(usuario.getDocumento());
+            ResponseEntity<EnderecoDTO> req = (viaCepController.buscarEndereco(usuario.getCep()));
+            EnderecoDTO endereco = req.getBody();
+            resposta.setBairro(endereco.getBairro());
+            resposta.setCidade(endereco.getLocalidade());
+            resposta.setEstado(endereco.getUf());
+            return resposta;
     }
 
     @Override
